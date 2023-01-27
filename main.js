@@ -337,6 +337,7 @@ fetch(postApi) //Trả về cho mình stream (dòng dữ liệu)
     var commentBlock = document.getElementById('comment-block');
     var html = '';
     posts.forEach(function(post) {
-      
+      html += `<li> title: ${post.title} <br> ${post.body} </li>`;
     })
+    commentBlock.innerHTML = html;
   })
