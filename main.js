@@ -324,20 +324,31 @@ var comments = [
 //     commentBlock.innerHTML = html;
 //   })
 
-var postApi = 'https://jsonplaceholder.typicode.com/posts'
+// var postApi = 'https://jsonplaceholder.typicode.com/posts'
 
-fetch(postApi) //Trả về cho mình stream (dòng dữ liệu)
+// fetch(postApi) //Trả về cho mình stream (dòng dữ liệu)
+//   .then(function(response) {
+//     return response.json();   // trả về 1 promise
+//     // khi .json nó sẽ trả về cho mình 1 JS type
+//     // <=> JSON.parse() : JSON -> JS types
+//   })
+//   .then(function(posts) {
+//     console.log(posts);
+//     var commentBlock = document.getElementById('comment-block');
+//     var html = '';
+//     posts.forEach(function(post) {
+//       html += `<li> title: ${post.title} <br> ${post.body} </li>`;
+//     })
+//     commentBlock.innerHTML = html;
+//   })
+
+//            JSON SERVER
+
+var courseApi = " http://localhost:3000/course"
+fetch(courseApi)
   .then(function(response) {
-    return response.json();   // trả về 1 promise
-    // khi .json nó sẽ trả về cho mình 1 JS type
-    // <=> JSON.parse() : JSON -> JS types
+    return response.json();
   })
-  .then(function(posts) {
-    console.log(posts);
-    var commentBlock = document.getElementById('comment-block');
-    var html = '';
-    posts.forEach(function(post) {
-      html += `<li> title: ${post.title} <br> ${post.body} </li>`;
-    })
-    commentBlock.innerHTML = html;
+  .then(function(courses) {
+    console.log(courses);
   })
